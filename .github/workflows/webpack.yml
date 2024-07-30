@@ -1,5 +1,10 @@
 name: NodeJS with Webpack
 
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
 on:
   push:
     branches: [ "master" ]
@@ -26,6 +31,11 @@ jobs:
       run: |
         npm install --ci
         npm run build
+
+    - name: Upload artifact
+      uses: actions/upload-pages-artifact@v3
+      with:
+        path: ./dist
 
   # Deployment job
   deploy:
