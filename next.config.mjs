@@ -2,7 +2,7 @@
 const nextConfig = {
   output: 'export',
   reactStrictMode: true,
-  basePath: '/tg_shop/'
+  basePath: '/tg_shop'
 };
 
 export default nextConfig;
